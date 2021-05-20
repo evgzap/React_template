@@ -1,2 +1,5 @@
 node_modules/
-public/
+server/session/
+public/client/
+server/sessions/
+.vscode/

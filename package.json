@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "webpack --mode development --config webpack.config.main.js --watch --hot",
+    "watch": "webpack --mode development --config webpack.config.main.js --watch",
     "watch_p": "webpack --mode production --config webpack.config.main.js",
     "start": "./node_modules/.bin/supervisor -w server ./server/app.js",
-    "dev": "webpack --mode development --config webpack.config.hub.js --watch --hot"
+    "dev": "webpack --mode development --config webpack.config.hub.js --watch"
   },
   "author": "evgzap",
   "license": "ISC",
@@ -38,10 +38,24 @@
     "webpack-cli": "^4.6.0"
   },
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.19.0",
+    "connect-ensure-login": "^0.1.1",
+    "connect-flash": "^0.1.1",
     "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.12.9",
+    "node-rtsp-stream": "0.0.9",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
     "path": "^0.12.7",
+    "peer": "^0.6.1",
     "popper.js": "^1.16.1",
     "react-router-dom": "^5.2.0",
-    "socket.io": "^4.0.1"
+    "session-file-store": "^1.5.0",
+    "socket.io": "^4.0.1",
+    "socket.io-client": "^4.1.1",
+    "uuid": "^8.3.2"
   }
 }

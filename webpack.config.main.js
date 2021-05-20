@@ -12,7 +12,8 @@ module.exports = (argv, argc) => {
   const isProd = mode == "production";
   console.log(mode);
   const entry = {
-    main: ["./client/index.js"]
+    main: ["./client/index.js"],
+    login:["./login/index.js"]
   };
 
   if (isDev) {
@@ -60,7 +61,7 @@ module.exports = (argv, argc) => {
 
   const output = {
     filename: "js/[name].bundle.js",
-    path: __dirname + "/public/",
+    path: __dirname + "/public/client",
   };
 
   const plugins = [
@@ -84,15 +85,12 @@ module.exports = (argv, argc) => {
   // );
   if (isDev) {
     plugins.push(new webpack.HotModuleReplacementPlugin());
-    plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: true }));
+    plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
   }
 
   return {
     entry,
     mode,
-    devServer: {
-      open: true,
-    },
     module: _module,
     devtool: "source-map",
     output,
